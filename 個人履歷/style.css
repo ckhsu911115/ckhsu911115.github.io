@@ -1,0 +1,35 @@
+body {
+  background: #246;
+  margin: 0 auto;
+  overflow: hidden;
+}
+svg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  pointer-events: none; /* 新增这一行 */
+}
+
+path {
+  transition: 1000ms;
+}
+#floating-image {
+  position: absolute;
+  height: 300px; /* 調整照片大小 */
+  opacity: 0.7; /* 半透明效果 */
+  left: 50%; /* 水平置中 */
+  bottom: 50%; /* 垂直置中 */
+  transform: translate(-50%, 50%) rotate(-30deg); /* 向左旋轉30度 */
+  z-index: 0; /* 確保SVG可以覆蓋照片 */
+  transition: all 2s ease; /* 平滑過渡效果 */ 
+}
+
+
+
+
+#floating-image.floating {
+  transform: translateY(-7vh) translateX(-20vw); /* 向上移動 */
+  z-index: 2; /* 確保SVG可以覆蓋照片 */
+  opacity: 1; /* 完全不透明 */
+}
